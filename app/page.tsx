@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Search, Shield, ExternalLink, Users, Plus, Download } from "lucide-react";
 
 const HOST_A_NIGHT_PDF_URL = "https://g.tlcdn.com/gen/5f3aa4e1704b47ab8c18ab568f9f42f3.pdf";
+const NETWORKING_FLYER_URL = "https://g.tlcdn.com/gen/62d4fa5df3654207b353b2e8d5d4c716.png";
 
 export default function HomePage() {
   const [language, setLanguage] = useState<Language>("en");
@@ -109,6 +110,27 @@ export default function HomePage() {
                 <a href={HOST_A_NIGHT_PDF_URL} target="_blank" rel="noopener noreferrer">
                   <Download className="h-3.5 w-3.5" />
                   {language === "en" ? "Open Host a Night Kit (PDF)" : "Abrir Kit de Organiza una Noche (PDF)"}
+                </a>
+              </Button>
+            </div>
+          )}
+
+          {activeBoard.id === "networking" && (
+            <div className="flex flex-col gap-2 rounded-lg border border-primary/30 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold">
+                  {language === "en" ? "Want the event flyer graphic?" : "¿Quieres el gráfico del volante del evento?"}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {language === "en"
+                    ? "The branded Networking, Opportunity & Trivia flyer — ready to post or print."
+                    : "El volante de marca de Networking, Oportunidad y Trivia — listo para publicar o imprimir."}
+                </p>
+              </div>
+              <Button size="sm" asChild className="shrink-0 gap-1.5">
+                <a href={NETWORKING_FLYER_URL} target="_blank" rel="noopener noreferrer">
+                  <Download className="h-3.5 w-3.5" />
+                  {language === "en" ? "Open Event Flyer" : "Abrir Volante del Evento"}
                 </a>
               </Button>
             </div>
