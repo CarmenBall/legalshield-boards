@@ -9,7 +9,9 @@ import { ScriptCard } from "@/components/script-card";
 import { LanguageToggle } from "@/components/language-toggle";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Shield, ExternalLink, Users, Plus } from "lucide-react";
+import { Search, Shield, ExternalLink, Users, Plus, Download } from "lucide-react";
+
+const HOST_A_NIGHT_PDF_URL = "https://g.tlcdn.com/gen/5f3aa4e1704b47ab8c18ab568f9f42f3.pdf";
 
 export default function HomePage() {
   const [language, setLanguage] = useState<Language>("en");
@@ -90,6 +92,27 @@ export default function HomePage() {
               {activeBoard.description[language]}
             </p>
           </div>
+
+          {activeBoard.id === "host-a-night" && (
+            <div className="flex flex-col gap-2 rounded-lg border border-primary/30 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold">
+                  {language === "en" ? "Want the printable graphics too?" : "¿Quieres también los gráficos imprimibles?"}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {language === "en"
+                    ? "Invites, social graphics, menu flyer, name tags, and sign-in sheet — all in the original PDF."
+                    : "Invitaciones, gráficos sociales, volante de opciones, gafetes, y hoja de registro — todo en el PDF original."}
+                </p>
+              </div>
+              <Button size="sm" asChild className="shrink-0 gap-1.5">
+                <a href={HOST_A_NIGHT_PDF_URL} target="_blank" rel="noopener noreferrer">
+                  <Download className="h-3.5 w-3.5" />
+                  {language === "en" ? "Open Host a Night Kit (PDF)" : "Abrir Kit de Organiza una Noche (PDF)"}
+                </a>
+              </Button>
+            </div>
+          )}
 
           <div className="relative max-w-sm">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
