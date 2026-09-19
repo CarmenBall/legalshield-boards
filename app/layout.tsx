@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LegalShield Boards",
+  title: "CMBSuccess Boards",
   description: "Team content library for scripts, posts, and talking points.",
 };
 

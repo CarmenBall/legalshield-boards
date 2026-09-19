@@ -39,7 +39,7 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-primary" />
             <div>
-              <h1 className="text-lg font-bold leading-none">LegalShield Boards</h1>
+              <h1 className="text-lg font-bold leading-none">CMBSuccess Boards</h1>
               <p className="text-xs text-muted-foreground">
                 {language === "en" ? "Team content library" : "Biblioteca de contenido del equipo"}
               </p>
