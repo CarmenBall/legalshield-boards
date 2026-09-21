@@ -13,6 +13,8 @@ import { Search, Shield, ExternalLink, Users, Plus, Download } from "lucide-reac
 
 const HOST_A_NIGHT_PDF_URL = "https://g.tlcdn.com/gen/5f3aa4e1704b47ab8c18ab568f9f42f3.pdf";
 const NETWORKING_FLYER_URL = "https://g.tlcdn.com/gen/62d4fa5df3654207b353b2e8d5d4c716.png";
+const INCOME_TRACKER_XLSX_URL = "https://g.tlcdn.com/gen/afc274b59b0a4993a7b9bdc170886c9c.xlsx";
+const INCOME_TRACKER_GUIDE_PDF_URL = "https://g.tlcdn.com/gen/09ab0a9a73304781a13566e85265cd38.pdf";
 
 export default function HomePage() {
   const [language, setLanguage] = useState<Language>("en");
@@ -133,6 +135,35 @@ export default function HomePage() {
                   {language === "en" ? "Open Event Flyer" : "Abrir Volante del Evento"}
                 </a>
               </Button>
+            </div>
+          )}
+
+          {activeBoard.id === "income-tracker" && (
+            <div className="flex flex-col gap-3 rounded-lg border border-primary/30 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold">
+                  {language === "en" ? "Get your own private copy" : "Obtén tu propia copia privada"}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {language === "en"
+                    ? "Download the Excel template to your own device — your numbers stay private and are never shared with the team."
+                    : "Descarga la plantilla de Excel a tu propio dispositivo — tus números permanecen privados y nunca se comparten con el equipo."}
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-wrap gap-2">
+                <Button size="sm" asChild className="gap-1.5">
+                  <a href={INCOME_TRACKER_XLSX_URL} target="_blank" rel="noopener noreferrer">
+                    <Download className="h-3.5 w-3.5" />
+                    {language === "en" ? "Download Tracker (Excel)" : "Descargar Rastreador (Excel)"}
+                  </a>
+                </Button>
+                <Button size="sm" variant="outline" asChild className="gap-1.5">
+                  <a href={INCOME_TRACKER_GUIDE_PDF_URL} target="_blank" rel="noopener noreferrer">
+                    <Download className="h-3.5 w-3.5" />
+                    {language === "en" ? "Open Quick Reference (PDF)" : "Abrir Guía Rápida (PDF)"}
+                  </a>
+                </Button>
+              </div>
             </div>
           )}
 

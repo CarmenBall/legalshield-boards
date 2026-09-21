@@ -5,6 +5,7 @@ import { recruitingExtraItems } from "@/lib/recruiting-extra";
 import { objectionsExtraItems } from "@/lib/objections-extra";
 import { openingExtraItems } from "@/lib/opening-extra";
 import { hostANightBoard } from "@/lib/host-a-night-board";
+import { incomeTrackerBoard } from "@/lib/income-tracker-board";
 
 export const boards: BoardCategory[] = [
   {
@@ -192,5 +193,6 @@ Comenta "PROTEGER" y te enviaré los detalles.`,
   },
   ...networkingAndLnaBoards,
   hostANightBoard,
+  incomeTrackerBoard,
   onboardingBoard,
 ];
